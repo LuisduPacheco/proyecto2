@@ -1,0 +1,18 @@
+<br/>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" class="form-control" name="filterPlayer" placeholder="Encuentra a un jugador por nombre" [(ngModel)]="filterPlayer"/>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div *ngFor="let jugadores of this.jugador_temporal | filter: filterPlayer" class="col col-lg-3 col-md-4 col-sm-12" style="padding: 5px">
+            <app-card-player [nombre]="jugadores['name']" [foto]="jugadores['photo']" [id_player]="jugadores['id']" ></app-card-player>
+        </div>
+    </div>
+</div>

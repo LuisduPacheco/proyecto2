@@ -1,0 +1,27 @@
+<br/>
+<br/>
+<header>
+    <button class="button" (click)="cerrar()">
+        cerrar sesión 
+    </button>
+    <h1 class="titulo" >UEFA CHAMPIONS LEAGUE
+    </h1>
+
+</header>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <input type="text" class="form-control" name="filterTeam" placeholder="Find a team by name" [(ngModel)]="filterTeam"/>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div *ngFor="let equipos of this.equipo_temporal.respuesta.informacion | filter:filterTeam" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" style="padding: 5px;">
+            <app-card-team [equipo]="equipos['name']" [escudo]="equipos['logo']" [id_equipo]="equipos['team_id']"></app-card-team>
+        </div>
+    </div>
+</div>

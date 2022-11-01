@@ -1,0 +1,36 @@
+<br/>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form id="login"
+            autocomplete="off"
+            [formGroup] = 'FormData'
+            (ngSubmit) = 'login()'>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input type="text" class="form-control" formControlName='username' name='username' placeholder="usuario">
+                        <div class="has-danger" *ngIf="username?.invalid && (username?.dirty || username?.touched)">
+                            <p style="color: red;">El usuario es un campo obligatorio</p>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <input type="password" class="form-control" formControlName='password' name='password' placeholder="contrasenia">
+                        <div class="has-danger" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                            <p style="color: red;">La contrasenia es un campo obligatorio</p>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <button class="btn btn-primary" type="submit"> Iniciar Sesion</button>
+                    </div>
+                </div>
+        </form>
+        </div>
+    </div>
+</div>
